@@ -1,0 +1,53 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+
+
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'main/css/link.css'%}">
+{% endblock %}
+
+
+{% block content %}
+<div class="link-input">
+<h3>Генератор экспресс-ссылок</h3>
+<form action="{% url 'generate' %}" method="POST">
+    {% csrf_token %}
+    <div class="mainURL">
+      <span>http://localhost:8000/</span> <input type="url" name="original" id="id_mainURL" placeholder="Главная ссылка">
+    </div>
+    <div class="shortURL">
+       <span  class="">Желаемая ссылка</span><input type="text" name="short" class="" placeholder="Экспресс-ссылка (не обязательно)" maxlength="6" id="id_shortURL">
+    </div>
+   <input type="submit"  class="btn_success" style="padding: 10px 15px;"  value="Сгенерировать">
+</form>
+
+</div>
+        <hr>
+<div class="link_output">
+
+    <h4>Ваши экспресс-ссылки</h4>
+<div class="flexbox">
+    {% for u in urls %}
+        <div class="links">
+        <h6>Главная ссылка: <a href="{{ u.originalURL }}" target="_blank" class="">{{ u.originalURL }}</a></h6>
+<h6>Экспресс-ссылка : <a href="http://localhost:8000/{{ u.shortQuery }}" target="_blank" class="">http://localhost:8000/{{ u.shortQuery }}</a></h6>
+<h6>Посетили : {{ u.visits }}раз(а) </h6>
+<h6>Последний раз посетили в : {{u.updated_at}}</h6>
+<h6>Создали в: {{u.created_at}}</h6>
+<form  method="POST" action="{% url 'deleteurl' %}">
+{% csrf_token %}
+<input type="hidden" class="" name="delete" value="{{ u.shortQuery }}">
+<input type="submit" class="btn_cancel" style="padding : 2px 4px;" value="Удалить">
+</form>
+        </div>
+
+{% endfor %}
+
+</div>
+            </div>
+
+
+
+{% endblock %}

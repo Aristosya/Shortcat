@@ -1,0 +1,41 @@
+{% extends "main/base.html"%}
+{% load static %}
+
+
+
+{% block link %}
+    <link rel="stylesheet" href="{% static "user/css/profile.css" %}">
+     <link rel="stylesheet" href="{% static "user/css/base.css" %}">
+{% endblock %}
+
+{% block title %}
+     Профиль
+{% endblock %}
+
+
+{% block content %}
+<div class="row">
+    <h2 class="username_icon"><b>{{ user.username }}  </b></h2> <p class=""> <b>{{ user.get_full_name }}</b> </p>
+        <div>
+        <img src="{{ user.profile.img.url }}" alt="Фото пользователя" class="imgs ms-3">
+        </div>
+            <button id="btn_change" onclick="trigger_submit()">Изменить изображение</button>
+
+        <form method="post" class="mt-3 with_first_upload" enctype="multipart/form-data">
+           {% csrf_token %}
+            {{ profileForm.img }}
+            {{ updateUserForm.as_p }}
+            <button id="btn_submit" type="submit">Принять</button>
+        </form>
+</div>
+
+    <script>
+    function trigger_submit() {
+        $('#id_img').trigger('click');
+    }
+    </script>
+{% endblock %}
+
+
+{% block scrpts %}
+{% endblock %}

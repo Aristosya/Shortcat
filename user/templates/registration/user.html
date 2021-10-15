@@ -1,0 +1,39 @@
+{% extends "main/base.html"%}
+{% load static %}
+
+
+
+{% block link %}
+    <link rel="stylesheet" href="{% static "user/css/base.css" %}">
+{#    <link rel="stylesheet" href="{% static "user/css/registration.css" %}">#}
+{% endblock %}
+
+{% block title %}
+    Авторизация
+{% endblock %}
+
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-3">
+    </div>
+    <div class="col-lg-6">
+    <div class="user-block">
+        <h2>Авторизация</h2>
+        <div class="m-sm-5">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button id="btn_enter" type="submit">Войти</button>
+            <a class="btn_enter" href="{% url 'main' %}"><button class="btn_cancel">Отмена</button></a>
+            </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <div class="col-lg-3">
+    </div>
+
+{% endblock %}
+

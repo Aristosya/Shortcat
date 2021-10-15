@@ -1,0 +1,27 @@
+.imgs{
+    /*width: 70%;*/
+    max-height:250px;
+}
+#id_img{
+    display: none;
+}
+
+
+.username_icon{
+    text-decoration: underline #000000;
+}
+
+
+#btn_submit{
+    padding: 5px 10px;
+    margin-bottom: 20px;
+}
+
+#btn_change{
+    padding: 5px 10px;
+    margin-top: 20px;
+}
+
+.row{
+    margin-top: 20px;
+}

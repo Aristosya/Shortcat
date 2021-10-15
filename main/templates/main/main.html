@@ -1,0 +1,22 @@
+{% extends "main/base.html"%}
+{% load static %}
+
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'main/css/main.css'%}">
+{% endblock %}
+{% block title %}Home Page{% endblock %}
+
+
+ {% block content %}
+     <div class="main"><img src="https://pets2.me/media/res/4/2/7/1/4271.ox1j9o.840.jpg" alt="экзот короткошерстный"></div>
+     <div class="main"><h3>Нажимай на кнопку и делай свой ШортКат</h3></div>
+     <div class="main"><a href="{% url 'link' %}"><button class="btn_success"><b>СОЗДАТЬ</b></button></a></div>
+
+ {% endblock %}
+
+
+
+
+{% block scrpts %}
+{% endblock %}

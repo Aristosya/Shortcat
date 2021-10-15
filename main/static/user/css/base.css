@@ -1,0 +1,77 @@
+.user-block{
+    border : 2px solid silver;
+    max-width : 100%;
+    padding: 25px;
+    border-radius : 20px;
+    margin-top: 30px;
+}
+
+.user-block h2{
+    width : 100%;
+}
+footer{
+    display : none;
+}
+label{
+    font-weight: bold;
+}
+
+span.helptext{
+    color: rgba(192, 192, 192, 0.53);
+}
+
+.errorlist li{
+    color: red;
+    font-weight: bold;
+}
+
+
+
+#id_username, #id_password, #id_sexy, #id_title, #id_text, #id_password1, #id_last_name , #id_first_name, #id_email{
+    display: block;
+    width: 95%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin-top: 5px;
+}
+
+form p{
+   margin-top: 20px;
+}
+
+form button, form a {
+    margin-top: 20px;
+}
+
+form button{
+    margin-right : 10px;
+}
+
+.user-block {
+    margin-top: 20px;
+}
+
+#id_img {
+    display: none;
+}
+
+.imgs {
+    max-width: 100%;
+}
+
+
+#btn_enter{
+    padding: 5px 15px;
+}
+

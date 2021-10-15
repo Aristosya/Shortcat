@@ -1,0 +1,43 @@
+{% extends "main/base.html"%}
+{% load static %}
+
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'main/css/contacts.css'%}">{% endblock %}
+{% block title %}О нас{% endblock %}
+
+
+ {% block content %}
+     <div class="row">
+     <div class="col-left">
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3254.8004666594243!2d33.3070299151419!3d35.33577608027624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de6cd4a840618d%3A0x94526d846f469bbe!2sTurkcell%20%C4%B0leti%C5%9Fim%20Merkezi%20Din%C3%A7alp!5e0!3m2!1sru!2s!4v1634288752948!5m2!1sru!2s" width="400" height="300" style="border:1px solid black; margin: 0 40px;" allowfullscreen="" loading="lazy"></iframe>
+     </div>
+     <div class="col-right">
+         <div class="text-scream">
+             <h3>Теперь Вы знаете о нас больше !</h3>
+         <h5>Да, мы на Кипре !</h5>
+         </div>
+          <ul>
+              <li>
+                  Tel: +9 999 007-08-07
+              </li>
+              <li>
+                  Fax: +90 533 882 86 89
+              </li>
+              <li>
+                  Email: admin@itpgroger.com
+              </li>
+              <li>
+                  web-site: <a href="{% url 'main' %}">Our web site</a>
+              </li>
+          </ul>
+
+     </div>
+     </div>
+ {% endblock %}
+
+
+
+
+{% block scrpts %}
+{% endblock %}
